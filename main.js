@@ -61,9 +61,18 @@ btnAvanti.addEventListener("click", function(){
 })
 
 btnIndietro.addEventListener("click", function(){
-    imgContainers[imgActive].classList.add("d-none")
-    imgActive += - 1
-    imgContainers[imgActive].classList.remove("d-none")
+    // imgContainers[imgActive].classList.add("d-none")
+    // imgActive += - 1
+    // imgContainers[imgActive].classList.remove("d-none")
+    if(imgActive > 0) {
+        imgContainers[imgActive].classList.add("d-none")
+        imgActive += - 1
+        imgContainers[imgActive].classList.remove("d-none")
+    } else {
+        imgContainers[imgActive].classList.add("d-none")
+        imgActive = 4
+        imgContainers[imgActive].classList.remove("d-none")
+    }
 })
 
 
