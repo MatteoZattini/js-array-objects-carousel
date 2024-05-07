@@ -1,3 +1,5 @@
+let contenitore = document.getElementById("imgContainer")
+
 const images = [
     {
         image: 'img/01.webp',
@@ -22,4 +24,14 @@ const images = [
     }
 ];
 
-let contenitore = document.getElementsByClassName("imgContainer")
+
+for (const img of images) {
+    console.log(img.title)
+    let slide = document.createElement("div")
+    slide.classList.add("imgContainer")
+    contenitore.append(slide)
+    slide.innerHTML = `
+    <img class="object-fit-cover w-100 h-100" src="${img.image}" alt="">
+    <h2>${img.title}</h2>
+    <p class="mb-2">${img.text}</p>`
+}
