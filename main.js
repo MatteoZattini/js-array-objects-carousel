@@ -39,10 +39,21 @@ for (const img of images) {
 }
 
 let imgActive = 0;
-document.querySelectorAll(".imgContainer")[imgActive].classList.remove("d-none")
+let imgContainers = document.querySelectorAll(".imgContainer")
+imgContainers[imgActive].classList.remove("d-none")
 
 document.getElementById("avanti").addEventListener("click", function(){
     // imgactive ++ ridare il d none e toglierlo alla successiva
+    imgContainers[imgActive].classList.add("d-none")
+    imgActive += + 1
+    imgContainers[imgActive].classList.remove("d-none")
+    
+    // if(imgActive <= images.length){
+    //     imgContainers[imgActive].classList.add("d-none")
+    //     imgContainers[imgActive].classList.remove("d-none")
+
+    // }
+
 })
 
 
