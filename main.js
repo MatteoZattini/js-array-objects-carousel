@@ -1,4 +1,7 @@
 let contenitore = document.getElementById("imgContainer")
+let btnAvanti = document.getElementById("avanti")
+let btnIndietro = document.getElementById("Indietro")
+
 
 const images = [
     {
@@ -31,7 +34,12 @@ for (const img of images) {
     slide.classList.add("imgContainer")
     contenitore.append(slide)
     slide.innerHTML = `
-    <img class="object-fit-cover w-100 h-100" src="${img.image}" alt="">
+    <img class="object-fit-cover w-100 h-100 d-none" src="${img.image}" alt="">
     <h2>${img.title}</h2>
-    <p class="mb-2">${img.text}</p>`
+    <p>${img.text}</p>`
+    btnAvanti.addEventListener("click", function (){
+    slide.classList.add("active")
+    })
 }
+
+
