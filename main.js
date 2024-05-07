@@ -44,15 +44,19 @@ imgContainers[imgActive].classList.remove("d-none")
 
 btnAvanti.addEventListener("click", function(){
     // imgactive ++ ridare il d none e toglierlo alla successiva
-    imgContainers[imgActive].classList.add("d-none")
-    imgActive += + 1
-    imgContainers[imgActive].classList.remove("d-none")
+    // imgContainers[imgActive].classList.add("d-none")
+    // imgActive += + 1
+    // imgContainers[imgActive].classList.remove("d-none")
     
-    // if(imgActive <= images.length){
-    //     imgContainers[imgActive].classList.add("d-none")
-    //     imgContainers[imgActive].classList.remove("d-none")
-
-    // }
+    if(imgActive < images.length - 1){
+        imgContainers[imgActive].classList.add("d-none")
+        imgActive += + 1
+        imgContainers[imgActive].classList.remove("d-none")
+    } else {
+        imgContainers[imgActive].classList.add("d-none")
+        imgActive = 0
+        imgContainers[imgActive].classList.remove("d-none")
+    }
 
 })
 
