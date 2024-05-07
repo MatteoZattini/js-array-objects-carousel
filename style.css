@@ -1,14 +1,15 @@
-#imgContainer {
-    width: 100%;
-    height: 500px;
-}
+
 
 .imgContainer {
     width: 100%;
-    height: 500px;
+    height: 800px;
 }
 
 .active {
     display: block;
+}
+
+.h-custom{
+    height: 600px;
 }
 

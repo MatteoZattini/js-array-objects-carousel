@@ -23,21 +23,27 @@ const images = [
     }
 ];
 
-let contenitore = document.getElementById("imgContainer")
+let contenitore = document.getElementById("tuttoContainer")
 let btnAvanti = document.getElementById("avanti")
-let btnIndietro = document.getElementById("Indietro")
-let imgActive = images[0];
+let btnIndietro = document.getElementById("indietro")
 let nxtImg;
 
 for (const img of images) {
     let slide = document.createElement("div")
-    slide.classList.add("imgContainer")
+    slide.classList.add("imgContainer", "d-none")
+    
     contenitore.append(slide)
-    slide.innerHTML = `<img class="object-fit-cover w-100 h-100 d-none" src="${img.image}" alt="">`
+    slide.innerHTML = `<img class="object-fit-cover w-100 h-custom" src="${img.image}" alt="">
+    <h2>${img.title}</h2>
+    <p>${img.text}</p>`
 }
 
-btnAvanti.addEventListener("click", function (){
-    imgActive.classList.add("d-block")
+let imgActive = 0;
+document.querySelectorAll(".imgContainer")[imgActive].classList.remove("d-none")
+
+document.getElementById("avanti").addEventListener("click", function(){
+    // imgactive ++ ridare il d none e toglierlo alla successiva
 })
+
 
 
