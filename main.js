@@ -1,7 +1,3 @@
-let contenitore = document.getElementById("imgContainer")
-let btnAvanti = document.getElementById("avanti")
-let btnIndietro = document.getElementById("Indietro")
-
 
 const images = [
     {
@@ -27,19 +23,21 @@ const images = [
     }
 ];
 
+let contenitore = document.getElementById("imgContainer")
+let btnAvanti = document.getElementById("avanti")
+let btnIndietro = document.getElementById("Indietro")
+let imgActive = images[0];
+let nxtImg;
 
 for (const img of images) {
-    console.log(img.title)
     let slide = document.createElement("div")
     slide.classList.add("imgContainer")
     contenitore.append(slide)
-    slide.innerHTML = `
-    <img class="object-fit-cover w-100 h-100 d-none" src="${img.image}" alt="">
-    <h2>${img.title}</h2>
-    <p>${img.text}</p>`
-    btnAvanti.addEventListener("click", function (){
-    slide.classList.add("active")
-    })
+    slide.innerHTML = `<img class="object-fit-cover w-100 h-100 d-none" src="${img.image}" alt="">`
 }
+
+btnAvanti.addEventListener("click", function (){
+    imgActive.classList.add("d-block")
+})
 
 
