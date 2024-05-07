@@ -42,7 +42,7 @@ let imgActive = 0;
 let imgContainers = document.querySelectorAll(".imgContainer")
 imgContainers[imgActive].classList.remove("d-none")
 
-document.getElementById("avanti").addEventListener("click", function(){
+btnAvanti.addEventListener("click", function(){
     // imgactive ++ ridare il d none e toglierlo alla successiva
     imgContainers[imgActive].classList.add("d-none")
     imgActive += + 1
@@ -54,6 +54,12 @@ document.getElementById("avanti").addEventListener("click", function(){
 
     // }
 
+})
+
+btnIndietro.addEventListener("click", function(){
+    imgContainers[imgActive].classList.add("d-none")
+    imgActive += - 1
+    imgContainers[imgActive].classList.remove("d-none")
 })
 
 
