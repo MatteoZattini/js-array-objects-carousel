@@ -26,7 +26,7 @@ const images = [
 let contenitore = document.getElementById("tuttoContainer")
 let btnAvanti = document.getElementById("avanti")
 let btnIndietro = document.getElementById("indietro")
-let nxtImg;
+// let nxtImg;
 
 for (const img of images) {
     let slide = document.createElement("div")
@@ -34,8 +34,8 @@ for (const img of images) {
     
     contenitore.append(slide)
     slide.innerHTML = `<img class="object-fit-cover w-100 h-custom" src="${img.image}" alt="">
-    <h2>${img.title}</h2>
-    <p>${img.text}</p>`
+    <h2 class="bottom-left">${img.title}</h2>
+    <p class="bottom-left2">${img.text}</p>`
 }
 
 let imgActive = 0;
@@ -48,9 +48,10 @@ btnAvanti.addEventListener("click", function(){
     // imgActive += + 1
     // imgContainers[imgActive].classList.remove("d-none")
     
-    if(imgActive < images.length - 1){
+    if(imgActive < 4){
         imgContainers[imgActive].classList.add("d-none")
-        imgActive += + 1
+        // imgActive += + 1
+        imgActive++
         imgContainers[imgActive].classList.remove("d-none")
     } else {
         imgContainers[imgActive].classList.add("d-none")
@@ -66,7 +67,8 @@ btnIndietro.addEventListener("click", function(){
     // imgContainers[imgActive].classList.remove("d-none")
     if(imgActive > 0) {
         imgContainers[imgActive].classList.add("d-none")
-        imgActive += - 1
+        // imgActive += - 1
+        imgActive--
         imgContainers[imgActive].classList.remove("d-none")
     } else {
         imgContainers[imgActive].classList.add("d-none")
